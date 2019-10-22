@@ -1,6 +1,6 @@
 from . import auth
-from flask import render_template, url_for
-from .forms import LoginForm
+from flask import render_template
+from .forms import LoginForm, RegisterForm
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -16,4 +16,5 @@ def login():
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')
+    form = RegisterForm()
+    return render_template('register.html', form=form)

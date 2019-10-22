@@ -3,7 +3,9 @@
 
 {% block content %}
 
-    <div class="form-wrapper p-5">
+    <link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
+
+    <div class="container w-25 mt-5">
         {{ wtf.quick_form(form) }}
     </div>
 
